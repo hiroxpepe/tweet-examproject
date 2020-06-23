@@ -1,0 +1,810 @@
+/* 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */ 
+
+/* ****************************************************************************
+ * initialize
+ *****************************************************************************/
+* {
+    margin: 0;
+    padding: 0;
+}
+input {
+    width: 100%;
+    font-size: 100%;
+}
+textarea {
+    width: 100%;
+    height: 5em;
+    resize: vertical;
+    font-size: 100%;
+}
+body, div {
+    font: 100% arial, helvetica, clean, sans-serif;
+} 
+select, input, button, textarea {
+    font: 90% arial, helvetica, clean, sans-serif;
+}
+
+/* ****************************************************************************
+ * define the body of this application.
+ * this will set the background color of this site.
+ */
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: mintcream;
+}
+
+/* ****************************************************************************
+ * basic layout configuration
+ *****************************************************************************/
+
+/* ****************************************************************************
+ * define the container area of this application.
+ * this represents part of the rectangle to display the contents of site.
+ * here, there is never set a height param.
+ */
+div.container {
+    width: 763px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lavender;
+    border-left: 1px solid gainsboro;
+    border-right: 1px solid gainsboro;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+    div.container.wide {
+        width: 950px;
+    }
+
+/* ****************************************************************************
+ * define the header area of this application.
+ * this part is setting of the appearance and layout
+ * structure of the constituent regions for this site.
+ */
+div.header {
+    width: 100%;
+    height: 5em;
+    text-align: left;
+    color: white;
+    background: #777799;
+    border-bottom: 1px solid gainsboro;
+}
+
+/* ****************************************************************************
+ * define the menu area of this application.
+ */
+div.menu {
+    width: 100%;
+    text-decoration: none;
+    color: white;
+    background: dimgray;
+}
+
+/* ****************************************************************************
+ * define the content area of this application.
+ */
+div.content {
+    width: 70%;
+    min-height: 850px; /*790px*/;
+    height: auto;
+    float: left;
+    text-align: left;
+    background-color: white;
+}
+
+/* ****************************************************************************
+ * define the sidebar area of this application.
+ */
+div.sidebar {
+    width: 30%;
+    min-height: 720px;
+    height: auto;
+    float: right;
+    text-align: left;
+    background-color: lavender;
+}
+
+/* ****************************************************************************
+ * define the footer area of this application.
+ */
+div.footer {
+    width: 100%;
+    height: 6em;
+    clear: both;
+    text-align: right;
+    font-size: 90%;
+    color: white;
+    background: #777799;
+    border-top: 1px solid gainsboro;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* ****************************************************************************
+ * basic margin configuration 
+ *****************************************************************************/
+
+/* ****************************************************************************
+ * define the div block class for set basic margin of this application.
+ */
+div.block {
+    margin-right: 1em;
+    margin-left: 1em;
+    padding: 0.25em;
+}
+
+/* ****************************************************************************
+ * basic appearance configuration
+ *****************************************************************************/
+
+/* ****************************************************************************
+ * define the appearance of the header content.
+ */
+div.header-content {
+    padding-top: 1em;
+}
+    span.header-logo {
+        margin-right: 0.25em;
+    }
+        span.header-logo img {
+            border: 1px solid #aaaabb;
+            border-radius: 4px;
+        }
+    span.header-title {
+        cursor: pointer;
+        font-size: xx-large;
+        font-weight: bold;
+    }
+    span.header-sub-title {
+        font-size: 60%;
+    }
+
+/* ****************************************************************************
+ * define the appearance of the menu content.
+ */
+div.menu-content {
+}
+    div.menu-bar {
+        height: 1.55em;
+    }
+        div.menu-bar a {
+            margin-right: 0.25em;
+            padding-left: 0.25em;
+            padding-right: 0.25em;
+            text-decoration: none;
+            color: white;
+        }
+        div.menu-bar a:active {
+            text-decoration: none;
+            color: white;
+        }
+        div.menu-bar a:visited {
+            text-decoration: none;
+            color: white;
+        }
+        div.menu-bar a:hover {
+            text-decoration: none;
+            color: white;
+            background: gray;
+            border-radius: 2px;
+        }
+            div.menu-bar-left {
+                float: left;
+            }
+            div.menu-bar-right {
+                float: right;
+            }
+                div.menu-bar-right img {
+                    padding-top: 0.15em;
+                }
+
+/* ****************************************************************************
+ * define the appearance of the sidebar content.
+ */
+div.sidebar-content {
+    padding-top: 1em;
+}
+    div.sidebar-content > a {
+        margin-top: 7pt;
+        margin-right: 0pt;
+        margin-bottom: 7pt;
+        margin-left: 0pt;
+        padding-top: 2pt;
+        padding-right: 2pt;
+        padding-bottom: 2pt;
+        padding-left: 2pt;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        background: #777799;
+        border: 1px solid #aaaaaa;
+        border-radius: 3px;
+    }
+        div.sidebar-content > a:hover {
+            color: white;
+            background: darkgray;
+            border: 1px solid #d2b48c;
+            border-radius: 3px;
+        }
+        div.sidebar-content > a.feed {
+            color: white;
+            background: sandybrown;
+            border: 1px solid #d2b48c;
+            border-radius: 3px;
+        }
+        
+    div.sidebar-content > p {
+        margin-top: 0.25em;
+        background-color: transparent;
+        border-width: 1px 0px 1px 0px;
+        border-style: solid solid solid solid;
+        border-color: gainsboro transparent gainsboro transparent;
+    }
+
+/* ****************************************************************************
+ * define the appearance of the footer content.
+ */
+div.footer-content {
+    padding-top: 0.75em;
+}
+    div.footer-content a {
+        text-decoration: none;
+        color: white;
+    }
+    div.footer-content a:active {
+        text-decoration: none;
+        color: white;
+    }
+    div.footer-content a:visited {
+        text-decoration: none;
+        color: white;
+    }
+    div.footer-content a:hover {
+        text-decoration: none;
+        font-weight: bold;
+        color: white;
+    }
+    
+/* ****************************************************************************
+ * define the appearance of a command button.
+ */
+input.command-button {
+    width: 90px;
+    height: 25px;
+    cursor: pointer;
+    color: white;
+    background: #777799;
+    border: 1px solid #aaaaaa;
+    border-radius: 4px;
+}
+    input.command-button:hover {
+        color: white;
+        background: darkgray;
+        border: 1px solid #d2b48c;
+        border-radius: 4px;
+    }
+
+/* ****************************************************************************
+ * define the appearance of a command anchor.
+ */
+a.command-anchor {
+    padding: 0.5em 2.5em 0.5em 2.5em;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    background: #777799;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+}
+a.command-anchor:active {
+    text-decoration: none;
+    color: white;
+}
+a.command-anchor:visited {
+    text-decoration: none;
+    color: white;
+}
+a.command-anchor:hover {
+    text-decoration: none;
+    color: white;
+    background: darkgray;
+    border: 1px solid #d2b48c;
+    border-radius: 4px;
+}
+    
+/* ****************************************************************************
+ * additional configuration
+ *****************************************************************************/
+
+/* ****************************************************************************
+ * define the appearance of the login content.
+ */
+div.login-content {
+    margin: 3em 4em 3em 4em;
+    padding: 3em 1em 3em 1em;
+    text-align: center;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+}
+    p.login-description {
+        font-size: 80%;
+        color: #777799;
+    }
+
+/* ****************************************************************************
+ * define the appearance of the index content.
+ */
+div.index-content {
+    padding-top: 1em;
+}
+    h1.index-title {
+        margin-top: 0.5em;
+        font-size: 90%;
+    }
+        
+/* ****************************************************************************
+ * define the appearance of the entry content.
+ */
+div.content-wrapper {
+    margin: 0.25em 0.25em 0.25em 0.25em;
+    padding: 0.25em 0.25em 1em 0.25em;
+    background: white;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+}
+    div.content-wrapper textarea {
+        border: 1px solid gainsboro;
+        border-radius: 3px;
+    }
+    div.tweet-command-block {
+        padding: 0.5em 0.25em 0em 0.25em;
+        text-align: right;
+    }
+    
+/* ****************************************************************************
+ * define the appearance of the tab block.
+ */
+div.tab-content {
+    padding: 1.25em 0.25em 1.25em 0.25em;
+	font-size: 90%;
+}
+    div.tab-content ul {
+        float: left;
+        background: lavender;
+        border-radius: 5px 5px 0px 0px;
+    }
+    div.tab-content li {
+        list-style: none;
+    }
+    div.tab-content li, div.tab-content li a {
+        float: left;
+    }
+    div.tab-content ul li.active {
+        background: lightyellow;
+        border-top: 1px solid wheat;
+        border-left: 1px solid wheat;
+        border-right: 1px solid wheat;
+        border-radius: 5px 5px 0px 0px;
+    }
+    div.tab-content ul li.active a {
+        color: #333333;
+    }
+    div.tab-content ul li a {
+        text-decoration: none;
+        padding: 0.5em;
+        color: #000;
+        font-weight: bold;
+    }
+    div.tab-content div.tab {
+        clear: both;
+        min-height: 150px;
+        background: lightyellow;
+        border: 1px solid wheat;
+        border-radius: 5px;
+    }
+    
+/* ****************************************************************************
+ * define the appearance of the setting content.
+ */
+div.setting-content {
+    padding: 1em;
+}
+    table.setting-table {
+        width: 100%;
+    }
+        table.setting-table td.label-td {
+            width: 25%;
+            padding: 0 0.5em 0 0;
+            text-align: right;
+        }
+        table.setting-table td.input-td {
+            width: 75%;
+        }
+            table.setting-table td.input-td input {
+                border: 1px solid gainsboro;
+                border-radius: 2px;
+            }
+    div.setting-command-block {
+        padding: 0.5em 0.65em 0.5em 0.65em;
+        text-align: right;
+    }
+        
+/* ****************************************************************************
+ * define the appearance of the tweet list table.
+ */
+div.tweet-list-content {
+    padding: 0.5em 1em 2em 1em;
+    text-align: center;
+    position: relative;
+}
+    div.tweet-list-content p {
+        /* 31px * 31px icon... */
+        position: absolute;
+        top: 270%;
+        left: 50%;
+        margin-top: -15px;
+        margin-left: -15px;
+        /* why...? */ 
+    }
+    table.tweet-list-table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    } 
+        table.tweet-list-table tr.tweet-list-tr {
+        }
+            table.tweet-list-table td.tweet-icon-td {
+                padding-top: 0.5em;
+                padding-bottom: 0.5em;
+                vertical-align: top;
+                border-bottom: 1px solid wheat;
+            }
+                table.tweet-list-table td.tweet-icon-td div.tweet-icon {
+                }
+                table.tweet-list-table td.tweet-icon-td div.tweet-icon img {
+                    border-radius: 4px;
+                    cursor: pointer;
+                }
+            table.tweet-list-table td.tweet-list-td {
+                padding-top: 0.5em;
+                padding-bottom: 0.5em;  
+                padding-left: 0.5em;
+                padding-right: 0.5em;
+                cursor: pointer;
+                vertical-align: top;
+                font-size: 80%;
+                border-bottom: 1px solid wheat;
+            }
+                table.tweet-list-table td.tweet-list-td span.action-reply {
+                    padding-left: 1em;
+                    cursor: pointer;
+                    color: lightyellow;
+                }
+                    table.tweet-list-table td.tweet-list-td span.action-reply:hover {
+                        font-weight: bold;
+                    }
+                table.tweet-list-table td.tweet-list-td span.action-delete {
+                    padding-left: 1em;
+                    cursor: pointer;
+                    color: lightyellow;
+                }
+                    table.tweet-list-table td.tweet-list-td span.action-delete:hover {
+                        font-weight: bold;
+                    }
+                table.tweet-list-table td.tweet-list-td span.action-retweet {
+                    padding-left: 1em;
+                    cursor: pointer;
+                    color: lightyellow;
+                }
+                    table.tweet-list-table td.tweet-list-td span.action-retweet:hover {
+                        font-weight: bold;
+                    }
+                table.tweet-list-table td.tweet-list-td span.action-favorite {
+                    padding-left: 1em;
+                    cursor: pointer;
+                    color: lightyellow;
+                }
+                    table.tweet-list-table td.tweet-list-td span.action-favorite:hover {
+                        font-weight: bold;
+                    }
+                table.tweet-list-table td.tweet-list-td span.tweet-created {
+                    padding-left: 1em;
+                    color: tan;
+                }
+        table.tweet-list-table a {
+            text-decoration: none;
+            color: black;
+        }
+        table.tweet-list-table a:active {
+            text-decoration: none;
+            color: black;
+        }
+        table.tweet-list-table a:visited {
+            text-decoration: none;
+            color: black;
+        }
+        table.tweet-list-table a:hover {
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+        }
+    
+/* ****************************************************************************
+ * define the appearance of the profile.
+ */
+ div.profile-content {
+    margin: 0.25em 0.25em 0.25em 0.25em;
+    padding: 0.25em;
+    background: white;
+    border: 1px solid gainsboro;
+    border-radius: 6px;
+ }
+    div.profile-content table td {
+        padding: 0.25em;
+        vertical-align: top;
+    }
+    div.profile-content table td div.profileName {
+        font-size: small;
+    }
+    div.profile-content table td div.show-profile {
+        font-size: xx-small;
+        cursor: pointer;
+        color: silver;
+    }
+    div.profile-content table td div.description {
+        font-size: xx-small;
+    }
+    div.profile-content img {
+        border-radius: 4px;
+    }
+    
+/* ****************************************************************************
+ * define the appearance of the calendar.
+ */
+ div.calendar-content {
+    margin: 1em 0.25em 0.25em 0.25em;
+    padding: 0.25em 0.25em 0.25em 0.25em;
+    background: white;
+    border: 1px solid gainsboro;
+    border-radius: 6px;
+ }
+    div.calendar-content div.calendar {
+    }
+        div.calendar table.calendar-table {
+            width: 100%;
+            text-align: center;
+            font-size: 70%;
+        }
+/* fix begin */
+            div.calendar table.calendar-caption-table {
+                width: 100%;
+                color: dimgray;
+            }
+                div.calendar table.calendar-caption-table div#calendar-title {
+                    text-align: center;
+                    font-size: 70%;
+                }
+                div.calendar table.calendar-caption-table div#calendar-back {
+                    text-align: left;
+                    font-size: 70%;
+                    cursor: pointer;
+                }
+                    div.calendar table.calendar-caption-table div#calendar-back:hover {
+                        font-weight: bold;
+                    }
+                div.calendar table.calendar-caption-table div#calendar-forward {
+                    text-align: right;
+                    font-size: 70%;
+                    cursor: pointer;
+                }
+                    div.calendar table.calendar-caption-table div#calendar-forward:hover {
+                        font-weight: bold;
+                    }
+/* fix end */
+        div.calendar table.calendar-table th {
+            width: 2em;
+            text-align: center;
+            color: dimgray;
+        }
+        div.calendar table.calendar-table td {
+            width: 2em;
+            text-align: center;
+            color: gray;
+        }
+            table.calendar-table th.su { 
+                background-color: #ffcccc;
+                border-radius: 2px;
+            }
+            table.calendar-table th.sa { 
+                background-color: #ccccff;
+                border-radius: 2px;
+            }
+            table.calendar-table td.su { 
+                background-color: #ffcccc;
+                border-radius: 2px;
+            }
+            table.calendar-table td.sa { 
+                background-color: #ccccff;
+                border-radius: 2px;
+            }
+            table.calendar-table a.day-a {
+                color: #777799;
+            }
+            table.calendar-table a.day-a:active {
+                color: #777799;
+            }
+            table.calendar-table a.day-a:visited {
+                color: #777799;
+            }
+            table.calendar-table a.day-a:hover {
+                font-weight: bold;
+                color: #777799;
+            }
+        
+/* ****************************************************************************
+ * define the appearance of the tagcrowd content.
+ */
+div.tagcrowd-content {
+    margin: 1em 0.25em 0.25em 0.25em;
+    padding: 0.5em;
+    word-wrap: break-word;
+    background: white;
+    border: 1px solid gainsboro;
+    border-radius: 6px;
+}
+    div.tagcrowd-content div.nodata {
+        text-align: center;
+        font-size: 60%;
+        color: silver;
+    }
+    span.tagcrowd-span a.tagcrowd-a {
+        margin: 0.25em;
+        text-align: center;
+        cursor: pointer;
+        font-size: 80%;
+        color: #777799;
+    }
+        span.tagcrowd-span a.tagcrowd-a:hover {
+            font-weight: bold;
+        }
+        
+/* ****************************************************************************
+ * define the appearance of the recent content.
+ */
+div.recent-content {
+    margin: 1em 0.25em 1.25em 0.25em;
+    padding: 0.5em;
+    background: white;
+    border: 1px solid gainsboro;
+    border-radius: 6px;
+}
+    div.recent-content div.nodata {
+        text-align: center;
+        font-size: 60%;
+        color: silver;
+    }
+    div.recent-div a.recent-a {
+        margin: 0.25em;
+        text-align: center;
+        cursor: pointer;
+        font-size: 80%;
+        color: #777799;
+    }
+        div.recent-div a.recent-a:hover {
+            font-weight: bold;
+        }
+        
+/* ****************************************************************************
+ * define the appearance of the search content.
+ */
+div.search-content {
+    margin: 1em 0.25em 0.25em 0.25em;
+    padding: 0.5em;
+    background: white;
+    border: 1px solid gainsboro;
+    border-radius: 6px;
+}
+    div.search-content div#tweet-search {
+        text-align: right;
+    }
+        div.search-content input#search-text {
+            margin-bottom: 0.5em;
+            border: 1px solid gainsboro;
+            border-radius: 3px;
+        }
+
+/* ****************************************************************************
+ * define the appearance of the permalink.
+ */
+ div.permalink-content {
+    padding-top: 1.25em;
+    padding-bottom: 1.25em;
+ }
+    div.permalink-header {
+        margin: 0 0.25em 0 0.25em;
+        padding: 0.5em 1em 0.5em 1em;
+        text-align: left;
+        border-top: 1px solid gainsboro;
+        border-left: 1px solid gainsboro;
+        border-right: 1px solid gainsboro;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+        div.permalink-header div.permalink-status-id {
+            font-size: 80%;
+            font-weight: bold;
+            color: dimgray;
+            background: white;
+        }
+        div.permalink-header div.permalink-date {
+            font-size: 80%;
+            font-weight: bold;
+            color: dimgray;
+            background: white;
+        }
+        div.permalink-header div.permalink-word {
+            font-size: 80%;
+            font-weight: bold;
+            color: dimgray;
+            background: white;
+        }
+    div.permalink-wrapper {
+        margin: 0 0.25em 0.25em 0.25em;
+        padding: 0.5em 1em 0.5em 1em;
+        background: white;
+        border: 1px solid gainsboro;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+        div.permalink-wrapper table {
+            width: 100%;
+        }
+        div.permalink-wrapper p.permalink-nothing {
+            margin-top: 0.5em;
+            font-size: 80%;
+            color: darkgrey;
+        }
+        div.permalink-wrapper p.permalink-text {
+            margin-top: 0.5em;
+            font-size: 80%;
+            border-bottom: 1px solid gainsboro;
+        }
+        div.permalink-wrapper p.permalink-detail {
+            margin-bottom: 0.5em;
+            font-size: xx-small;
+            color: silver;
+        }
+            div.permalink-wrapper p.permalink-detail a {
+                text-decoration: none;
+                color: silver;
+            }
+            div.permalink-wrapper p.permalink-detail a:active {
+                text-decoration: none;
+                color: silver;
+            }
+            div.permalink-wrapper p.permalink-detail a:visited {
+                text-decoration: none;
+                color: silver;
+            }
+            div.permalink-wrapper p.permalink-detail a:hover {
+                text-decoration: none;
+                font-weight: bold;
+                color: silver;
+            }
+        div.permalink-wrapper span.highlight {
+            background-color: lemonchiffon;
+            border-radius: 2px;
+        }
