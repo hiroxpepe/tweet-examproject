@@ -14,12 +14,9 @@
 
 package org.examproject.tweet.value;
 
-import java.util.jar.Attributes;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 /**
  * @author hiroxpepe
@@ -27,8 +24,6 @@ import org.springframework.stereotype.Component;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Component(value="oAuthValue")
-@Scope(value="prototype")
 public class OAuthValue {
 
     String requestTokenUrl;
