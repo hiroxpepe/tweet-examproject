@@ -2,30 +2,55 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    
+
     <groupId>org.examproject</groupId>
     <artifactId>exmpenglish</artifactId>
     <name>exmpenglish</name>
-    
     <packaging>pom</packaging>
-    <version>0.2.0-SNAPSHOT</version>
-    
+    <version>1.0.0</version>
+
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
+
     <modules>
-        <module>exmp-english-webapp</module>
-        <module>exmp-tweet-mvc</module>
-        <module>exmp-tweet-service</module>
-        <module>exmp-tweet-ext-mvc</module>
-        <module>exmp-tweet-ext-service</module>
-        <module>exmp-tweet-aspect</module>
-        <module>exmp-tweet-data-jpa</module>
-        <module>exmp-tweet-util</module>
+        <module>webapp</module>
+        <module>mvc-extension</module>
+        <module>mvc</module>
+        <module>service-extension</module>
+        <module>service</module>
+        <module>aspect</module>
+        <module>model</module>
+        <module>util</module>
     </modules>
-    
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <build>
         <plugins>
             <plugin>
