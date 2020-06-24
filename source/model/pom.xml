@@ -4,11 +4,11 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.examproject</groupId>
-    <artifactId>exmp-tweet-data-jpa</artifactId>
+    <groupId>org.examproject.tweet</groupId>
+    <artifactId>exmp-model</artifactId>
     <packaging>jar</packaging>
     <version>1.0.0</version>
-    <name>exmp-tweet-data-jpa</name>
+    <name>model</name>
 
     <properties>
         <spring.version>3.1.2.RELEASE</spring.version>

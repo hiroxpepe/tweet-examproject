@@ -3,11 +3,11 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.examproject</groupId>
-    <artifactId>exmp-english-webapp</artifactId>
-    <name>exmp-english-webapp</name>
+    <groupId>org.examproject.tweet</groupId>
+    <artifactId>exmp-webapp</artifactId>
     <packaging>war</packaging>
     <version>1.0.0</version>
+    <name>webapp</name>
 
     <properties>
         <spring.version>3.1.2.RELEASE</spring.version>
@@ -22,31 +22,24 @@
         <!--//////////////////////////////////////////////////////////////////////////-->
         <!-- USER LIB -->
 
-        <!-- exmp-tweet-mvc -->
+        <!-- exmp-mvc -->
         <dependency>
-            <groupId>org.examproject</groupId>
-            <artifactId>exmp-tweet-mvc</artifactId>
+            <groupId>org.examproject.tweet</groupId>
+            <artifactId>exmp-mvc</artifactId>
             <version>${version}</version>
         </dependency>
 
-        <!-- exmp-tweet-ext-mvc -->
+        <!-- exmp-mvc-extension -->
         <dependency>
-            <groupId>org.examproject</groupId>
-            <artifactId>exmp-tweet-ext-mvc</artifactId>
+            <groupId>org.examproject.tweet</groupId>
+            <artifactId>exmp-mvc-extension</artifactId>
             <version>${version}</version>
         </dependency>
 
-        <!-- exmp-tweet-aspect -->
+        <!-- exmp-aspect -->
         <dependency>
-            <groupId>org.examproject</groupId>
-            <artifactId>exmp-tweet-aspect</artifactId>
-            <version>${version}</version>
-        </dependency>
-
-        <!-- exmp-tweet-data-jpa -->
-        <dependency>
-            <groupId>org.examproject</groupId>
-            <artifactId>exmp-tweet-data-jpa</artifactId>
+            <groupId>org.examproject.tweet</groupId>
+            <artifactId>exmp-aspect</artifactId>
             <version>${version}</version>
         </dependency>
 

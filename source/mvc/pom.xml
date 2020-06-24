@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.examproject</groupId>
-    <artifactId>exmp-tweet-mvc</artifactId>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.examproject.tweet</groupId>
+    <artifactId>exmp-mvc</artifactId>
     <packaging>jar</packaging>
     <version>1.0.0</version>
-    <name>exmp-tweet-mvc</name>
+    <name>mvc</name>
 
     <properties>
         <spring.version>3.1.2.RELEASE</spring.version>
@@ -24,10 +24,10 @@
         <!--//////////////////////////////////////////////////////////////////////////-->
         <!-- USER LIB -->
 
-        <!-- exmp-tweet-service -->
+        <!-- exmp-service -->
         <dependency>
-            <groupId>org.examproject</groupId>
-            <artifactId>exmp-tweet-service</artifactId>
+            <groupId>org.examproject.tweet</groupId>
+            <artifactId>exmp-service</artifactId>
             <version>${version}</version>
         </dependency>
 

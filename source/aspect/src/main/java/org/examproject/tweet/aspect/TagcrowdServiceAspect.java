@@ -1,10 +1,10 @@
-/* 
+/*
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -35,25 +35,25 @@ import org.examproject.tweet.util.IsContainOfEmoticonWords;
  */
 @Aspect
 public class TagcrowdServiceAspect {
-    
+
     private static final Log LOG = LogFactory.getLog(
         TagcrowdServiceAspect.class
     );
-    
+
     ///////////////////////////////////////////////////////////////////////////
     // public methods
-    
+
     @Around("execution(* org.examproject.tweet.service.TagcrowdService.getTagcrowdListByName(..))")
     @SuppressWarnings("unchecked")
     public Object getTagcrowdListByNameAround(ProceedingJoinPoint pjp) throws Throwable {
         LOG.debug("called.");
-        
+
         // do the process.
         Object result = pjp.proceed();
-        
+
         // get filtered result.
         List<TagcrowdDto> filteredResult = getFilteredResult(result);
-       
+
         // sort by count on desc.
         Comparator comparator = new ReverseComparator(
             new CountComparator()
@@ -62,28 +62,28 @@ public class TagcrowdServiceAspect {
             filteredResult,
             comparator
         );
-        
+
         // must return the object.
         return filteredResult;
     }
-    
+
     ///////////////////////////////////////////////////////////////////////////
     // private methods
-    
+
     private List<TagcrowdDto> getFilteredResult(Object result) {
-        
+
         // a checker of sentence.
         Predicate emPredicate = new IsContainOfEmoticonWords();
-        
+
         // create a new tagcrowd list for return.
         List<TagcrowdDto> filteredResult = new ArrayList<TagcrowdDto>();
-        
+
         // search all of tagcrowds.
         for (TagcrowdDto tagcrowdDto : (List<TagcrowdDto>) result) {
-           
+
             // get a tagcrowd.
             String text = tagcrowdDto.getText();
-           
+
             // if it contain emoticon word.
             if (emPredicate.evaluate(text)) {
                 continue;
@@ -92,10 +92,10 @@ public class TagcrowdServiceAspect {
             // other, set the tagcrowd to new list.
             filteredResult.add(tagcrowdDto);
         }
-        
+
         return filteredResult;
     }
-    
+
     ///////////////////////////////////////////////////////////////////////////
     // private classes.
 
@@ -104,7 +104,7 @@ public class TagcrowdServiceAspect {
      * sort list by count.
      */
     class CountComparator implements Comparator<TagcrowdDto> {
-        
+
         @Override
         public int compare(TagcrowdDto o1, TagcrowdDto o2 ) {
             if (o1.getCount() == null) {
@@ -113,7 +113,7 @@ public class TagcrowdServiceAspect {
             if (o2.getCount() == null) {
                 return 0;
             }
-            
+
             int i = o1.getCount().compareTo(o2.getCount());
             if (i < 0) {
                 return -1;
@@ -124,5 +124,5 @@ public class TagcrowdServiceAspect {
             }
         }
     }
-    
+
 }
