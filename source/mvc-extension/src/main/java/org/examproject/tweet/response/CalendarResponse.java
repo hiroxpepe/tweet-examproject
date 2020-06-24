@@ -22,7 +22,7 @@ import lombok.RequiredArgsConstructor;
 import org.examproject.tweet.model.CalendarModel;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 @RequiredArgsConstructor
 @Data

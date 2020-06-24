@@ -44,7 +44,7 @@ import org.examproject.tweet.service.RecentService;
 import org.examproject.tweet.service.TagcrowdService;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 @Controller
 @Scope(value="session")

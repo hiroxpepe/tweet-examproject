@@ -17,7 +17,7 @@
  * a functor class of the application.
  * set the event handler of the delete tweet.
  * 
- * @author hiroxpepe
+ * @author h.adachi
  */
 exmp.tweet.functor.event.DeleteEventClosure = {
     

@@ -24,7 +24,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 public class StateParamUtil {
 

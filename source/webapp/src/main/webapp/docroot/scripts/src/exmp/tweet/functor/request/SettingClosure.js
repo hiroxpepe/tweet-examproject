@@ -17,7 +17,7 @@
  * a functor class of the application.
  * send http request for the setting.
  * 
- * @author hiroxpepe
+ * @author h.adachi
  */
 exmp.tweet.functor.request.SettingClosure = {
     

@@ -19,7 +19,7 @@ import java.util.Calendar;
 import org.apache.commons.collections.Transformer;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 public class MonthBeginDateTransformer implements Transformer {
 

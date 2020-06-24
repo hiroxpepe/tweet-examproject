@@ -16,7 +16,7 @@
 /**
  * a simple class of the Hoge.
  * 
- * @author hiroxpepe
+ * @author h.adachi
  */
 exmp.tweet.mock.Hoge = function(name, age) {
     this.name = name;

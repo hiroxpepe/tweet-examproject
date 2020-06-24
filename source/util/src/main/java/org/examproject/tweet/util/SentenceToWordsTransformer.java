@@ -18,7 +18,7 @@ import org.apache.commons.collections.Transformer;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 public class SentenceToWordsTransformer implements Transformer {
 

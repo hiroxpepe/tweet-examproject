@@ -15,7 +15,7 @@
 package org.examproject.tweet.util;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 public class UrlUtil {
 

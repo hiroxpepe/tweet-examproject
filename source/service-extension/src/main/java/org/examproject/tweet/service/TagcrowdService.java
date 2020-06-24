@@ -20,7 +20,7 @@ import org.examproject.tweet.dto.TagcrowdDto;
 import org.examproject.tweet.dto.TweetDto;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 public interface TagcrowdService {
 

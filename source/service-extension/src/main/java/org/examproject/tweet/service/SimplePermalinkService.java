@@ -43,7 +43,7 @@ import org.examproject.tweet.util.DayEndDateTransformer;
 import org.springframework.beans.BeansException;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 public class SimplePermalinkService implements PermalinkService {
 

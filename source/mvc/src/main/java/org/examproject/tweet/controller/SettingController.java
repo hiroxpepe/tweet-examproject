@@ -30,7 +30,7 @@ import org.examproject.tweet.form.TweetForm;
 import org.examproject.tweet.value.TweetCookie;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 @Controller
 @Scope(value="session")

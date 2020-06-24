@@ -25,7 +25,7 @@
         <constructor-arg name="consumerKey" value="KqdOwgzsgYVODX9BoE4Alw" />
         <constructor-arg name="consumerSecret" value="RERyZK5Ivq8IejY7RwCZxL8p6lT3LATBIes68nseMM" />
         <constructor-arg name="callbackUrlPath" value="callback.html" />
-        <constructor-arg name="siteDomain" value="http://hiroxpepe.com/twenglish/" />
+        <constructor-arg name="siteDomain" value="http://h.adachi.com/twenglish/" />
     </bean>
 
     <bean name="tweetForm"

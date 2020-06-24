@@ -39,7 +39,7 @@ import org.examproject.tweet.value.StateValue;
 import org.examproject.tweet.value.TweetAuthValue;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 public class SimpleTweetService implements TweetService {
 

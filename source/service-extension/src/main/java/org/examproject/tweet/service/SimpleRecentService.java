@@ -29,7 +29,7 @@ import org.examproject.tweet.entity.Tweet;
 import org.examproject.tweet.repository.TweetRepository;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 public class SimpleRecentService implements RecentService {
 

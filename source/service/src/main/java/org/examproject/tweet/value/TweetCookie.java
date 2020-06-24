@@ -15,7 +15,7 @@
 package org.examproject.tweet.value;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 public enum TweetCookie {
 

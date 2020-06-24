@@ -24,7 +24,7 @@ import com.cybozu.labs.langdetect.LangDetectException;
 import com.cybozu.labs.langdetect.Language;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 public class IsEnglishSentencePredicate implements Predicate {
     

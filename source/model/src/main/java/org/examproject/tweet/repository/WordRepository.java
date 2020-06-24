@@ -21,7 +21,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.examproject.tweet.entity.Word;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 public interface WordRepository extends JpaRepository<Word, Long> {
 

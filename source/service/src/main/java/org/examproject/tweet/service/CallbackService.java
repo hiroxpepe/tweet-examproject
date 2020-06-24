@@ -38,7 +38,7 @@ import org.examproject.tweet.value.OAuthAccessorValue;
 import org.examproject.tweet.value.OAuthValue;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 public class CallbackService {
 

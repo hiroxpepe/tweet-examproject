@@ -23,7 +23,7 @@ import lombok.RequiredArgsConstructor;
 import org.examproject.tweet.model.TagcrowdModel;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 @RequiredArgsConstructor
 @Data

@@ -45,7 +45,7 @@ import org.examproject.tweet.value.TweetAuthValue;
 import org.examproject.tweet.util.StateParamUtil;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 @Controller
 @Scope(value="session")

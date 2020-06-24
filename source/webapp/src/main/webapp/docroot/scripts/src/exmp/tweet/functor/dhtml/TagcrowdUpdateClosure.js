@@ -17,7 +17,7 @@
  * a functor class of the application.
  * update the html table of the tagcrowd.
  * 
- * @author hiroxpepe
+ * @author h.adachi
  */
 exmp.tweet.functor.dhtml.TagcrowdUpdateClosure = {
     

@@ -17,7 +17,7 @@
  * a functor class of the application.
  * update the setting tab.
  * 
- * @author hiroxpepe
+ * @author h.adachi
  */
 exmp.tweet.functor.dhtml.SettingTabUpdateClosure = {
     

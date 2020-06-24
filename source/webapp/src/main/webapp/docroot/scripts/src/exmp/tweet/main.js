@@ -16,7 +16,7 @@
 /**
  * called the main entry.
  * 
- * @author hiroxpepe
+ * @author h.adachi
  */
 new exmp.tweet.core.Application(
     this

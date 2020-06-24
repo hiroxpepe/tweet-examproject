@@ -17,7 +17,7 @@ package org.examproject.tweet.model;
 import lombok.Data;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 @Data
 public class ProfileModel {

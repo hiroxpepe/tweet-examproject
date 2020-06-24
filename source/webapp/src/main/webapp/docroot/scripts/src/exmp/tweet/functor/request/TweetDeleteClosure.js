@@ -17,7 +17,7 @@
  * a functor class of the application.
  * send http request for delete action.
  * 
- * @author hiroxpepe
+ * @author h.adachi
  */
 exmp.tweet.functor.request.TweetDeleteClosure = {
     

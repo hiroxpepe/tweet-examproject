@@ -17,7 +17,7 @@
  * a functor class of the application.
  * set the event handler of the favorite tweet.
  * 
- * @author hiroxpepe
+ * @author h.adachi
  */
 exmp.tweet.functor.event.FavoriteEventClosure = {
     

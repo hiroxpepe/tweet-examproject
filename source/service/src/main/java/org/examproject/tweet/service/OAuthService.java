@@ -32,7 +32,7 @@ import org.examproject.tweet.util.UrlUtil;
 import org.examproject.tweet.value.OAuthValue;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 public class OAuthService {
 

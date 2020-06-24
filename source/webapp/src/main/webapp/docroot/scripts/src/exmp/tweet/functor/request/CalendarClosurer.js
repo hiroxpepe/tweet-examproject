@@ -17,7 +17,7 @@
  * a functor class of the application.
  * send http request for get the calendar.
  * 
- * @author hiroxpepe
+ * @author h.adachi
  */
 exmp.tweet.functor.request.CalendarClosure = {
     

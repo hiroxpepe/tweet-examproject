@@ -16,7 +16,7 @@
 /**
  * a controller class of the application.
  * 
- * @author hiroxpepe
+ * @author h.adachi
  */
 exmp.tweet.core.Controller = window;{
     

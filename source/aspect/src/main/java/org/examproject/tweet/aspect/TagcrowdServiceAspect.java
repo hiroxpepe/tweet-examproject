@@ -31,7 +31,7 @@ import org.examproject.tweet.dto.TagcrowdDto;
 import org.examproject.tweet.util.IsContainOfEmoticonWords;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 @Aspect
 public class TagcrowdServiceAspect {

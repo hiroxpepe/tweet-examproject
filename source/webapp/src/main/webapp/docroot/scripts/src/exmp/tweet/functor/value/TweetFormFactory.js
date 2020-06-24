@@ -18,7 +18,7 @@
  * get the value from the html form and 
  * create a json object for http post.
  * 
- * @author hiroxpepe
+ * @author h.adachi
  */
 exmp.tweet.functor.value.TweetFormFactory = {
     

@@ -23,7 +23,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.examproject.tweet.entity.Tweet;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 public interface TweetRepository extends JpaRepository<Tweet, Long> {
 

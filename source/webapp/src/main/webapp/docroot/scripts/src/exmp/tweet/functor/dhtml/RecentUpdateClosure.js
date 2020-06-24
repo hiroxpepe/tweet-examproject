@@ -17,7 +17,7 @@
  * a functor class of the application.
  * update the html table of the recent.
  * 
- * @author hiroxpepe
+ * @author h.adachi
  */
 exmp.tweet.functor.dhtml.RecentUpdateClosure = {
     

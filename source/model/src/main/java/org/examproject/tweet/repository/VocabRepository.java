@@ -21,7 +21,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.examproject.tweet.entity.Vocab;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 public interface VocabRepository extends JpaRepository<Vocab, Long> {
 

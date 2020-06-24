@@ -17,7 +17,7 @@ package org.examproject.tweet.util;
 import org.apache.commons.collections.Predicate;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 public class IsContainJaKanaCodePredicate implements Predicate {
     

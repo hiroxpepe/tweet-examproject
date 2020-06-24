@@ -17,7 +17,7 @@ package org.examproject.tweet.util;
 import lombok.Value;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 @Value
 public class DateValue {

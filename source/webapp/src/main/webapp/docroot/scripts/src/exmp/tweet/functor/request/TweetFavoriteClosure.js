@@ -17,7 +17,7 @@
  * a functor class of the application.
  * send http request for favorite action.
  * 
- * @author hiroxpepe
+ * @author h.adachi
  */
 exmp.tweet.functor.request.TweetFavoriteClosure = {
     

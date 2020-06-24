@@ -40,7 +40,7 @@ import org.examproject.tweet.util.IsEnglishSentencePredicate;
 import org.examproject.tweet.util.IsStartedOfParticularWords;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 @Aspect
 public class TweetServiceAspect {

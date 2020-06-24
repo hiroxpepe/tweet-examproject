@@ -18,7 +18,7 @@
  * this class is a transformer that json data get by
  * ajax http requests and convert to html tags.
  * 
- * @author hiroxpepe
+ * @author h.adachi
  */
 exmp.tweet.functor.htmltag.TagcrowdTransformer = {
     

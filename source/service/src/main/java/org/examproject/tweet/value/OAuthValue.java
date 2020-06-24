@@ -19,7 +19,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 @Data
 @AllArgsConstructor

@@ -17,7 +17,7 @@
  * a functor class of the application.
  * get the value for calendar.
  * 
- * @author hiroxpepe
+ * @author h.adachi
  */
 exmp.tweet.functor.value.CalendarParamFactory = {
     

@@ -29,7 +29,7 @@ import lombok.Data;
 import org.springframework.stereotype.Component;
 
 /**
- * @author hiroxpepe
+ * @author h.adachi
  */
 @Data
 @Entity

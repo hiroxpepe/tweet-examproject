@@ -16,7 +16,7 @@
 /**
  * a util class of cookie.
  * 
- * @author hiroxpepe
+ * @author h.adachi
  */
 exmp.tweet.conf.ConstantValue = {
     
