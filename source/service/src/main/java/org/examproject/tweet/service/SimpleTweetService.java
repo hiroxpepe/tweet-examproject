@@ -354,7 +354,8 @@ public class SimpleTweetService implements TweetService {
         long cursol = -1;
         try {
             Twitter twitter = getTwitter();
-            return twitter.getUserLists(twitter.getScreenName(), cursol);
+            //return twitter.getUserLists(twitter.getScreenName(), cursol);
+            return twitter.getUserListMemberships(twitter.getScreenName(), cursol);
         } catch (TwitterException te) {
             throw new RuntimeException(te);
         }
@@ -397,7 +398,11 @@ public class SimpleTweetService implements TweetService {
             if (settinValue.getResponseListMode().equals("list")) {
                 if (settinValue.getUserListName().length() != 0) {
                     Twitter twitter = getTwitter();
-                    PagableResponseList/*<UserList>*/ lists = twitter.getUserLists(
+                    //PagableResponseList/*<UserList>*/ lists = twitter.getUserLists(
+                    //    twitter.getScreenName(),
+                    //    cursol
+                    //);
+                    PagableResponseList/*<UserList>*/ lists = twitter.getUserListMemberships(
                         twitter.getScreenName(),
                         cursol
                     );
@@ -406,7 +411,8 @@ public class SimpleTweetService implements TweetService {
                         UserList list = (UserList) o;
                         String listFullName = list.getFullName();
                         if (listFullName.equals(settinValue.getUserListName())) {
-                            listId = list.getId();
+                            //listId = list.getId();
+                            listId = (int) list.getId();
                             return twitter.getUserListStatuses(listId, paging);
                         }
                     }

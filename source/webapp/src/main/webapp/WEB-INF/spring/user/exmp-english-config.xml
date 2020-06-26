@@ -22,8 +22,8 @@
         <constructor-arg name="requestTokenUrl" value="http://twitter.com/oauth/request_token" />
         <constructor-arg name="authorizeUrl" value="http://twitter.com/oauth/authorize" />
         <constructor-arg name="accessTokenUrl" value="http://twitter.com/oauth/access_token" />
-        <constructor-arg name="consumerKey" value="KqdOwgzsgYVODX9BoE4Alw" />
-        <constructor-arg name="consumerSecret" value="RERyZK5Ivq8IejY7RwCZxL8p6lT3LATBIes68nseMM" />
+        <constructor-arg name="consumerKey" value="KlvGVZQel9isdqmzRKA0YfSTV" />
+        <constructor-arg name="consumerSecret" value="u1aHWKJfavIBxSSJ09syoaD3H2WobUkVipccSsfYDu2QEOmDbX" />
         <constructor-arg name="callbackUrlPath" value="callback.html" />
         <constructor-arg name="siteDomain" value="http://h.adachi.com/twenglish/" />
     </bean>

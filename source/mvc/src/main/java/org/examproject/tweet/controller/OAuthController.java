@@ -18,8 +18,8 @@ import javax.inject.Inject;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import net.oauth.OAuth;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.context.annotation.Scope;
@@ -28,11 +28,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import org.examproject.tweet.service.CallbackService;
-import org.examproject.tweet.service.OAuthService;
 import org.examproject.tweet.value.OAuthAccessorValue;
 import org.examproject.tweet.value.OAuthValue;
 import org.examproject.tweet.value.TweetCookie;
+import twitter4j.Twitter;
+import twitter4j.TwitterException;
+import twitter4j.TwitterFactory;
+import twitter4j.auth.AccessToken;
+import twitter4j.auth.RequestToken;
 
 /**
  * @author h.adachi
@@ -49,6 +52,9 @@ public class OAuthController {
     private final HttpServletRequest request = null;
 
     @Inject
+    private final HttpSession session = null;
+
+    @Inject
     private final OAuthValue authValue = null;
 
     ///////////////////////////////////////////////////////////////////////////
@@ -59,22 +65,20 @@ public class OAuthController {
         method=RequestMethod.GET
     )
     public String doOAuth(
+        HttpServletResponse response,
         Model model
     ) {
         LOG.debug("in.");
-
-        OAuthService service = new OAuthService();
-
-        String redirectTo = service.getRedirectTo(
-            request.getParameter("dest"),
-            request.getRequestURL().toString(),
-            authValue
-        );
-
-        LOG.debug("out.");
-        LOG.debug("redirect: " + redirectTo);
-
-        return "redirect:" + redirectTo;
+        Twitter twitter = new TwitterFactory().getInstance();
+         try {
+            RequestToken requestToken = twitter.getOAuthRequestToken("http://127.0.0.1:8080/callback.html");
+            session.setAttribute("requestToken_token", requestToken.getToken());
+            session.setAttribute("requestToken_secret", requestToken.getTokenSecret());
+            return "redirect:" + requestToken.getAuthorizationURL();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @RequestMapping(
@@ -84,36 +88,47 @@ public class OAuthController {
     public String doCallback(
         HttpServletResponse response,
         Model model
-    ) {
+    ) throws TwitterException, InterruptedException {
         LOG.debug("in.");
+        Thread.sleep(5000);
 
         // TODO: check for authentication?
         String destUrl = request.getParameter("dest");
-        String requestToken = request.getParameter(OAuth.OAUTH_TOKEN);
+        //String requestToken = request.getParameter(OAuth.OAUTH_TOKEN);
+        String requestToken = request.getParameter("oauth_token");
         if (requestToken == null) {
             // TODO: part of the authentication check is required!
             return "redirect:" + destUrl;
         }
-        String verifire = request.getParameter(OAuth.OAUTH_VERIFIER);
+        //String verifire = request.getParameter(OAuth.OAUTH_VERIFIER);
+        String verifire = request.getParameter("oauth_verifier");
         if (verifire == null) {
             // TODO: part of the authentication check is required!
             return "redirect:" + destUrl;
         }
 
-        CallbackService service = new CallbackService();
-        OAuthAccessorValue accessorValue = service.getOAuthAccessorValue(
-            request.getRequestURL().toString(),
-            requestToken,
-            verifire,
-            authValue
+        Twitter twitter = new TwitterFactory().getInstance();
+        //AccessToken accessToken = twitter.getOAuthAccessToken(requestToken, verifire);
+        //AccessToken accessToken = twitter.getOAuthAccessToken(requestToken);
+        AccessToken accessToken = twitter.getOAuthAccessToken(
+            request.getParameter("oauth_token"),
+            request.getParameter("oauth_verifier")
         );
 
+//        CallbackService service = new CallbackService();
+//        OAuthAccessorValue accessorValue = service.getOAuthAccessorValue(
+//            request.getRequestURL().toString(),
+//            requestToken,
+//            verifire,
+//            authValue
+//        );
+
         // store access token and secret to cookie.
-        storeTokenToCookie(
-            response,
-            accessorValue,
-            604800
-        );
+//        storeTokenToCookie(
+//            response,
+//            accessorValue,
+//            604800
+//        );
 
         LOG.debug("out.");
 
