@@ -37,11 +37,11 @@
         </dependency>
 
         <!-- exmp-aspect -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.examproject.tweet</groupId>
             <artifactId>exmp-aspect</artifactId>
             <version>${version}</version>
-        </dependency>
+        </dependency>-->
 
         <!--//////////////////////////////////////////////////////////////////////////-->
         <!-- OSS LIB -->
@@ -194,5 +194,5 @@
             </plugin>
         </plugins>
     </build>
-    
+
 </project>

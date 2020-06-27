@@ -20,6 +20,8 @@ import java.util.List;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
 import twitter4j.PagableResponseList;
 import twitter4j.Paging;
 import twitter4j.ResponseList;
@@ -41,6 +43,8 @@ import org.examproject.tweet.value.TweetAuthValue;
 /**
  * @author h.adachi
  */
+@Service(value="tweetService")
+@Scope(value="prototype")
 public class SimpleTweetService implements TweetService {
 
     private static final Log LOG = LogFactory.getLog(

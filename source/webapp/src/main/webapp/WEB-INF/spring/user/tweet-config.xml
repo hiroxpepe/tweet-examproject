@@ -14,7 +14,7 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
-    <aop:aspectj-autoproxy proxy-target-class="true" />
+    <!--<aop:aspectj-autoproxy proxy-target-class="true" />-->
 
     <bean id="oAuthValue"
         class="org.examproject.tweet.value.OAuthValue"
@@ -58,16 +58,16 @@
         scope="prototype">
     </bean>
 
-    <bean name="tweetService"
+    <!--<bean name="tweetService"
         class="org.examproject.tweet.service.SimpleTweetService"
         scope="prototype">
-    </bean>
+    </bean>-->
 
     <!-- extension module -->
 
-    <bean name="serviceAspect"
+    <!--<bean name="serviceAspect"
         class="org.examproject.tweet.aspect.TweetServiceAspect">
-    </bean>
+    </bean>-->
 
     <!-- tagcrowd -->
 
@@ -90,9 +90,9 @@
         scope="prototype">
     </bean>
 
-    <bean name="tagcrowdServiceAspect"
+    <!--<bean name="tagcrowdServiceAspect"
         class="org.examproject.tweet.aspect.TagcrowdServiceAspect">
-    </bean>
+    </bean>-->
 
     <!-- calendar -->
 
