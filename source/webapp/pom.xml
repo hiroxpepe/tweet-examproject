@@ -151,6 +151,7 @@
                     <webApp>
                          <contextPath>/</contextPath>
                     </webApp>
+                    <!--<jettyXml>jetty.xml</jettyXml>-->
                     <httpConnector>
                         <port>8080</port>
                     </httpConnector>

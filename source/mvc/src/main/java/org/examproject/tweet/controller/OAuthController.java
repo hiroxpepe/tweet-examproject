@@ -67,9 +67,10 @@ public class OAuthController {
     public String doOAuth(
         HttpServletResponse response,
         Model model
-    ) {
+    ) throws TwitterException {
         LOG.debug("in.");
         Twitter twitter = new TwitterFactory().getInstance();
+        ///LOG.info("name: " + twitter.getScreenName());
          try {
             RequestToken requestToken = twitter.getOAuthRequestToken("http://127.0.0.1:8080/callback.html");
             session.setAttribute("requestToken_token", requestToken.getToken());
@@ -90,26 +91,11 @@ public class OAuthController {
         Model model
     ) throws TwitterException, InterruptedException {
         LOG.debug("in.");
-        Thread.sleep(5000);
-
-        // TODO: check for authentication?
-        String destUrl = request.getParameter("dest");
-        //String requestToken = request.getParameter(OAuth.OAUTH_TOKEN);
-        String requestToken = request.getParameter("oauth_token");
-        if (requestToken == null) {
-            // TODO: part of the authentication check is required!
-            return "redirect:" + destUrl;
-        }
-        //String verifire = request.getParameter(OAuth.OAUTH_VERIFIER);
-        String verifire = request.getParameter("oauth_verifier");
-        if (verifire == null) {
-            // TODO: part of the authentication check is required!
-            return "redirect:" + destUrl;
-        }
 
         Twitter twitter = new TwitterFactory().getInstance();
+        //LOG.info("name: " + twitter.getScreenName());
         //AccessToken accessToken = twitter.getOAuthAccessToken(requestToken, verifire);
-        //AccessToken accessToken = twitter.getOAuthAccessToken(requestToken);
+        Thread.sleep(5000);
         AccessToken accessToken = twitter.getOAuthAccessToken(
             request.getParameter("oauth_token"),
             request.getParameter("oauth_verifier")
