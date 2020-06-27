@@ -45,7 +45,6 @@ import org.examproject.tweet.response.TweetResponse;
 import org.examproject.tweet.service.TweetService;
 import org.examproject.tweet.value.OAuthValue;
 import org.examproject.tweet.value.SettingValue;
-//import org.examproject.tweet.value.StateValue;
 import org.examproject.tweet.value.TweetAuthValue;
 import org.examproject.tweet.value.TweetCookie;
 import org.examproject.tweet.util.StateParamUtil;
@@ -64,8 +63,6 @@ public class TweetController {
     private static final String TWEET_AUTH_VALUE_BEAN_ID = "tweetAuthValue";
 
     private static final String SETTING_VALUE_BEAN_ID = "settingValue";
-
-//    private static final String STATE_VALUE_BEAN_ID = "stateValue";
 
     private static final String TWEET_SERVICE_BEAN_ID = "tweetService";
 

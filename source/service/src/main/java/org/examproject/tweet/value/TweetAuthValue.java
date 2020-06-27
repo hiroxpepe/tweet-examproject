@@ -24,7 +24,7 @@ import org.springframework.stereotype.Component;
  */
 @Data
 @AllArgsConstructor
-@Component(value="entryDto")
+@Component
 @Scope(value="prototype")
 public class TweetAuthValue {
 

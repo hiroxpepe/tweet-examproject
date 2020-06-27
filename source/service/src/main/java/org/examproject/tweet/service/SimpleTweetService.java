@@ -376,7 +376,6 @@ public class SimpleTweetService implements TweetService {
 
         try {
             // TODO: polymorphism to here? -> plugin.
-
             // home
             if (settinValue.getResponseListMode().equals("home")) {
                 Twitter twitter = getTwitter();
@@ -459,10 +458,6 @@ public class SimpleTweetService implements TweetService {
     private Twitter getTwitter() {
         TwitterFactory factory = new TwitterFactory();
         Twitter twitter = factory.getInstance();
-        twitter.setOAuthConsumer(
-            authValue.getConsumerKey(),
-            authValue.getConsumerSecret()
-        );
         twitter.setOAuthAccessToken(new AccessToken(
             authValue.getOauthToken(),
             authValue.getOauthTokenSecret()

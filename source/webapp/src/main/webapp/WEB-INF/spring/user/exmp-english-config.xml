@@ -22,10 +22,10 @@
         <constructor-arg name="requestTokenUrl" value="http://twitter.com/oauth/request_token" />
         <constructor-arg name="authorizeUrl" value="http://twitter.com/oauth/authorize" />
         <constructor-arg name="accessTokenUrl" value="http://twitter.com/oauth/access_token" />
-        <constructor-arg name="consumerKey" value="KlvGVZQel9isdqmzRKA0YfSTV" />
-        <constructor-arg name="consumerSecret" value="u1aHWKJfavIBxSSJ09syoaD3H2WobUkVipccSsfYDu2QEOmDbX" />
-        <constructor-arg name="callbackUrlPath" value="callback.html" />
-        <constructor-arg name="siteDomain" value="http://h.adachi.com/twenglish/" />
+        <constructor-arg name="consumerKey" value="PhghH5jzTbYQmenWvZKj5iZnc" />
+        <constructor-arg name="consumerSecret" value="w19bBZ50Oi7WUSRYX6CHqggriKJuAmA3earLhFQwzyt7eGcgCN" />
+        <constructor-arg name="callbackUrlPath" value="" />
+        <constructor-arg name="siteDomain" value="https://tweet-examproject.herokuapp.com/" />
     </bean>
 
     <bean name="tweetForm"
@@ -55,16 +55,6 @@
 
     <bean name="profileDto"
         class="org.examproject.tweet.dto.ProfileDto"
-        scope="prototype">
-    </bean>
-
-    <bean name="tweetAuthValue"
-        class="org.examproject.tweet.value.TweetAuthValue"
-        scope="prototype">
-    </bean>
-
-    <bean name="settingValue"
-        class="org.examproject.tweet.value.SettingValue"
         scope="prototype">
     </bean>
 
@@ -136,22 +126,5 @@
     <bean name="permalinkService"
         class="org.examproject.tweet.service.SimplePermalinkService">
     </bean>
-
-    <!-- entity -->
-
-<!--    <bean name="tweet"
-        class="org.examproject.tweet.entity.Tweet"
-        scope="prototype">
-    </bean>-->
-
-<!--    <bean name="vocab"
-        class="org.examproject.tweet.entity.Vocab"
-        scope="prototype">
-    </bean>-->
-
-<!--    <bean name="word"
-        class="org.examproject.tweet.entity.Word"
-        scope="prototype">
-    </bean>-->
 
 </beans>

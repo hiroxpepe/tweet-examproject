@@ -12,34 +12,20 @@
  * limitations under the License.
  */
 
-package org.examproject.tweet.response;
-
-import java.util.List;
+package org.examproject.tweet.form;
 
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
-
-import org.examproject.tweet.model.TweetModel;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 /**
  * @author h.adachi
  */
-@RequiredArgsConstructor
 @Data
-public class TweetResponse {
+@Component
+@Scope(value="prototype")
+public class AuthForm {
 
-    private final List<TweetModel> tweetModelList;
-
-    Boolean isError = false;
-
-    String message;
-
-    List<String> userListNameList;
-
-    public TweetResponse(Boolean isError, String message) {
-        this(null);
-        this.isError = isError;
-        this.message = message;
-    }
+    String pin;
 
 }

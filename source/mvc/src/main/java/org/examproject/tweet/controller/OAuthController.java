@@ -14,6 +14,7 @@
 
 package org.examproject.tweet.controller;
 
+import java.io.IOException;
 import javax.inject.Inject;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -22,20 +23,22 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.examproject.tweet.form.AuthForm;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import org.examproject.tweet.value.OAuthAccessorValue;
-import org.examproject.tweet.value.OAuthValue;
-import org.examproject.tweet.value.TweetCookie;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.auth.AccessToken;
 import twitter4j.auth.RequestToken;
+
+import org.examproject.tweet.value.OAuthAccessorValue;
+import org.examproject.tweet.value.OAuthValue;
+import org.examproject.tweet.value.TweetCookie;
 
 /**
  * @author h.adachi
@@ -49,13 +52,7 @@ public class OAuthController {
     );
 
     @Inject
-    private final HttpServletRequest request = null;
-
-    @Inject
     private final HttpSession session = null;
-
-    @Inject
-    private final OAuthValue authValue = null;
 
     ///////////////////////////////////////////////////////////////////////////
     // public methods
@@ -64,61 +61,58 @@ public class OAuthController {
         value="/oauth",
         method=RequestMethod.GET
     )
-    public String doOAuth(
+    public String doRequestToken(
         HttpServletResponse response,
         Model model
-    ) throws TwitterException {
+    ) throws TwitterException, IOException {
         LOG.debug("in.");
         Twitter twitter = new TwitterFactory().getInstance();
-        ///LOG.info("name: " + twitter.getScreenName());
          try {
-            //RequestToken requestToken = twitter.getOAuthRequestToken("http://127.0.0.1:8080/callback.html");
-            RequestToken requestToken = twitter.getOAuthRequestToken("https://tweet-examproject.herokuapp.com/callback.html");
-            session.setAttribute("requestToken_token", requestToken.getToken());
-            session.setAttribute("requestToken_secret", requestToken.getTokenSecret());
-            return "redirect:" + requestToken.getAuthorizationURL();
+            RequestToken requestToken = twitter.getOAuthRequestToken();
+            if (requestToken != null) {
+                // set the requestToken to session.
+                session.setAttribute("requestToken", requestToken);
+                // set value to the model.
+                AuthForm authForm = new AuthForm();
+                model.addAttribute("authForm", authForm);
+                model.addAttribute("authorizationURL", requestToken.getAuthorizationURL());
+                return "login";
+            }
         } catch (Exception e) {
-            e.printStackTrace();
+            LOG.error(e.getMessage());
         }
         return null;
     }
 
     @RequestMapping(
-        value="/callback",
-        method=RequestMethod.GET
+        value="/oauth",
+        method=RequestMethod.POST
     )
-    public String doCallback(
+    public String doAccessToken(
         HttpServletResponse response,
+        AuthForm form,
         Model model
-    ) throws TwitterException, InterruptedException {
+    ) throws TwitterException {
         LOG.debug("in.");
-
+        RequestToken requestToken = (RequestToken) session.getAttribute("requestToken");
         Twitter twitter = new TwitterFactory().getInstance();
-        //LOG.info("name: " + twitter.getScreenName());
-        //AccessToken accessToken = twitter.getOAuthAccessToken(requestToken, verifire);
-        Thread.sleep(5000);
         AccessToken accessToken = twitter.getOAuthAccessToken(
-            request.getParameter("oauth_token"),
-            request.getParameter("oauth_verifier")
+            requestToken,
+            form.getPin()
         );
-
-//        CallbackService service = new CallbackService();
-//        OAuthAccessorValue accessorValue = service.getOAuthAccessorValue(
-//            request.getRequestURL().toString(),
-//            requestToken,
-//            verifire,
-//            authValue
-//        );
-
+        OAuthAccessorValue accessorValue = new OAuthAccessorValue(
+            "",
+            accessToken.getToken(),
+            accessToken.getTokenSecret(),
+            String.valueOf(accessToken.getUserId()),
+            accessToken.getScreenName()
+        );
         // store access token and secret to cookie.
-//        storeTokenToCookie(
-//            response,
-//            accessorValue,
-//            604800
-//        );
-
-        LOG.debug("out.");
-
+        storeTokenToCookie(
+            response,
+            accessorValue,
+            604800
+        );
         return "redirect:/index.html";
     }
 
