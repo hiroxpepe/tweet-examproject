@@ -15,14 +15,14 @@
     </properties>
 
     <modules>
-        <module>webapp</module>
-        <module>mvc-extension</module>
-        <module>mvc</module>
-        <module>service-extension</module>
-        <module>service</module>
-        <module>aspect</module>
-        <module>model</module>
-        <module>util</module>
+        <module>source/webapp</module>
+        <module>source/mvc-extension</module>
+        <module>source/mvc</module>
+        <module>source/service-extension</module>
+        <module>source/service</module>
+        <module>source/aspect</module>
+        <module>source/model</module>
+        <module>source/util</module>
     </modules>
 
     <pluginRepositories>
