@@ -72,7 +72,8 @@ public class OAuthController {
         Twitter twitter = new TwitterFactory().getInstance();
         ///LOG.info("name: " + twitter.getScreenName());
          try {
-            RequestToken requestToken = twitter.getOAuthRequestToken("http://127.0.0.1:8080/callback.html");
+            //RequestToken requestToken = twitter.getOAuthRequestToken("http://127.0.0.1:8080/callback.html");
+            RequestToken requestToken = twitter.getOAuthRequestToken("https://tweet-examproject.herokuapp.com/callback.html");
             session.setAttribute("requestToken_token", requestToken.getToken());
             session.setAttribute("requestToken_secret", requestToken.getTokenSecret());
             return "redirect:" + requestToken.getAuthorizationURL();
