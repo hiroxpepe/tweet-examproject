@@ -16,6 +16,7 @@ $ mvn install
 ## How to run.
 ```sh
 $ cd Path_to_this_README.md
+$ cd source/webapp
 $ mvn jetty:run
 ```
 - check if it can access.  
