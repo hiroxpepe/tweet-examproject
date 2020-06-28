@@ -10,7 +10,7 @@
     <name>util</name>
 
     <properties>
-        <spring.version>3.1.2.RELEASE</spring.version>
+        <spring.version>5.2.6.RELEASE</spring.version>
         <lombok.version>1.18.12</lombok.version>
         <slf4j.version>1.7.30</slf4j.version>
         <logback.version>1.2.3</logback.version>
@@ -29,7 +29,7 @@
         <dependency>
             <groupId>commons-collections</groupId>
             <artifactId>commons-collections</artifactId>
-            <version>3.2</version>
+            <version>3.2.2</version>
         </dependency>
         <dependency>
             <groupId>commons-lang</groupId>
@@ -115,7 +115,6 @@
     </repositories>
 
     <build>
-        <!-- Name of the generated JAR file -->
         <finalName>${name}-${version}</finalName>
         <plugins>
             <plugin>

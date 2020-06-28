@@ -27,8 +27,6 @@ import org.examproject.tweet.entity.Tweet;
  */
 public interface TweetRepository extends JpaRepository<Tweet, Long> {
 
-    Tweet findById(Long id);
-
     List<Tweet> findByName(String name);
 
     List<Tweet> findByDateBetween(Date begin, Date end);

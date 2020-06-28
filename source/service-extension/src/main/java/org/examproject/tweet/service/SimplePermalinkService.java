@@ -19,6 +19,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import javax.inject.Inject;
 
 import org.apache.commons.collections.Transformer;
@@ -27,7 +28,6 @@ import org.apache.commons.lang.time.StopWatch;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.dozer.Mapper;
-import org.dozer.MappingException;
 import org.springframework.context.ApplicationContext;
 
 import org.examproject.tweet.dto.TweetDto;
@@ -40,7 +40,6 @@ import org.examproject.tweet.repository.WordRepository;
 import org.examproject.tweet.util.DateValue;
 import org.examproject.tweet.util.DayBeginDateTransformer;
 import org.examproject.tweet.util.DayEndDateTransformer;
-import org.springframework.beans.BeansException;
 
 /**
  * @author h.adachi
@@ -83,7 +82,9 @@ public class SimplePermalinkService implements PermalinkService {
             stopWatch.start();
 
             // get the tweet list.
-            Tweet tweet = tweetRepository.findById(statusId);
+            //Tweet tweet = tweetRepository.findById(statusId);
+            Optional<Tweet> optional = tweetRepository.findById(statusId);
+            Tweet tweet = optional.get();
             LOG.debug("tweet statusId: " + tweet.getId());
 
             // map the object.
@@ -290,7 +291,9 @@ public class SimplePermalinkService implements PermalinkService {
             }
 
             // get the tweet.
-            Tweet tweet = tweetRepository.findById(statusId);
+            //Tweet tweet = tweetRepository.findById(statusId);
+            Optional<Tweet> optional = tweetRepository.findById(statusId);
+            Tweet tweet = optional.get();
 
             // get user's tweet only.
             if (!tweet.getName().equals(userName)) {

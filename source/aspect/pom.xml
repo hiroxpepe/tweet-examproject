@@ -10,7 +10,7 @@
     <name>aspect</name>
 
     <properties>
-        <spring.version>3.1.2.RELEASE</spring.version>
+        <spring.version>5.2.6.RELEASE</spring.version>
         <lombok.version>1.18.12</lombok.version>
         <slf4j.version>1.7.30</slf4j.version>
         <logback.version>1.2.3</logback.version>
@@ -100,6 +100,12 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>${logback.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
         </dependency>
 
         <!--//////////////////////////////////////////////////////////////////////////-->

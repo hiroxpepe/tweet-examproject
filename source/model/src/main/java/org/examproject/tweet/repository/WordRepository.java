@@ -25,8 +25,6 @@ import org.examproject.tweet.entity.Word;
  */
 public interface WordRepository extends JpaRepository<Word, Long> {
 
-    Word findById(Long id);
-
     List<Word> findByText(String text);
 
 }

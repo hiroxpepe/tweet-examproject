@@ -24,14 +24,25 @@
 
     <!-- declare the Apache Tiles configuration. -->
     <bean id="tilesConfigurer"
-        class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+        class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
         <property name="definitions" value="/WEB-INF/layouts/templates.xml" />
     </bean>
 
     <!-- declare the Apache Tiles view resolver. -->
     <bean id="tilesViewResolver"
         class="org.springframework.web.servlet.view.UrlBasedViewResolver">
-        <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView" />
+        <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
+    </bean>
+
+    <!--//////////////////////////////////////////////////////////////////////////////-->
+    <!-- Jackson Message Converter configure -->
+
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+            </list>
+        </property>
     </bean>
 
     <!--//////////////////////////////////////////////////////////////////////////////-->

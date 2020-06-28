@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.List;
+import java.util.Optional;
 import javax.inject.Inject;
 
 import org.apache.commons.collections.Predicate;
@@ -223,7 +224,10 @@ public class SimpleTagcrowdService implements TagcrowdService {
                     }
 
                     // set vocabulary this tweet!
-                    Tweet tweet = tweetRepository.findById(statusId);
+                    //Tweet tweet = tweetRepository.findById(statusId);
+                    Optional<Tweet> optional = tweetRepository.findById(statusId);
+                    Tweet tweet = optional.get();
+
                     vocab.setStatus(tweet);
                     vocab.setName(userName);
                     vocabRepository.save(vocab);

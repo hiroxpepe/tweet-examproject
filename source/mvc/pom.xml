@@ -10,9 +10,8 @@
     <name>mvc</name>
 
     <properties>
-        <spring.version>3.1.2.RELEASE</spring.version>
-        <dozer.version>5.3.2</dozer.version>
-        <jackson.version>1.8.2</jackson.version>
+        <spring.version>5.2.6.RELEASE</spring.version>
+        <dozer.version>5.5.1</dozer.version>
         <lombok.version>1.18.12</lombok.version>
         <slf4j.version>1.7.30</slf4j.version>
         <logback.version>1.2.3</logback.version>
@@ -45,6 +44,11 @@
         <dependency>
             <groupId>net.sf.dozer</groupId>
             <artifactId>dozer</artifactId>
+            <version>${dozer.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.dozer</groupId>
+            <artifactId>dozer-spring</artifactId>
             <version>${dozer.version}</version>
         </dependency>
 
@@ -87,6 +91,12 @@
             <version>${logback.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
+
         <!-- Servlet -->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -104,18 +114,6 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
-        </dependency>
-
-        <!-- Jackson -->
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-core-asl</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
-            <version>${jackson.version}</version>
         </dependency>
 
         <!--//////////////////////////////////////////////////////////////////////////-->
